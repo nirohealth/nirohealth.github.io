@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Drive 10 Hours a Day. Sciatica Almost Made Me Give Up.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background: #111;
+            color: #e8e8e8;
+            line-height: 1.8;
+            font-size: 16.5px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === ALERT BAR === */
+        .alert-bar {
+            background: #dc2626;
+            color: #fff;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .alert-bar span {
+            animation: pulse-text 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .adv-strip {
+            background: #1a1a1a;
+            border-bottom: 1px solid #2a2a2a;
+            text-align: center;
+            padding: 6px;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        /* === WRAPPER === */
+        .w {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 18px;
+        }
+
+        /* === HERO === */
+        .hero {
+            padding: 36px 0 30px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .hero .label {
+            display: inline-block;
+            background: #dc2626;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 3px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 27px;
+            line-height: 1.3;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 .hl {
+            color: #fbbf24;
+        }
+
+        .hero .meta {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .hero .meta strong {
+            color: #ccc;
+        }
+
+        /* === BODY === */
+        .content {
+            padding: 32px 0;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            color: #d0d0d0;
+        }
+
+        .content strong {
+            color: #fff;
+        }
+
+        .content h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin: 44px 0 18px;
+            line-height: 1.35;
+        }
+
+        .content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fbbf24;
+            margin: 34px 0 14px;
+        }
+
+        /* === HINDI QUOTE === */
+        .raw-quote {
+            background: #1a1a1a;
+            border-left: 4px solid #fbbf24;
+            padding: 18px 22px;
+            margin: 26px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .raw-quote p {
+            font-size: 17px;
+            font-style: italic;
+            color: #fbbf24;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .raw-quote .src {
+            font-size: 12px;
+            color: #666;
+            font-style: normal;
+        }
+
+        /* === PAIN COUNTER === */
+        .pain-counter {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            padding: 22px;
+            margin: 28px 0;
+        }
+
+        .pain-counter .title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #dc2626;
+            margin-bottom: 14px;
+        }
+
+        .pain-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .pain-item:last-child { border-bottom: none; }
+
+        .pain-item .what {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .pain-item .cost {
+            font-size: 14px;
+            font-weight: 700;
+            color: #dc2626;
+        }
+
+        .pain-counter .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0 0;
+            margin-top: 6px;
+            border-top: 2px solid #333;
+        }
+
+        .total-row .what {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .total-row .cost {
+            font-size: 18px;
+            font-weight: 900;
+            color: #dc2626;
+        }
+
+        /* === FAILED LIST === */
+        .fail-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .fail-list li {
+            padding: 12px 0 12px 28px;
+            position: relative;
+            font-size: 15px;
+            color: #aaa;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .fail-list li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .fail-list li strong { color: #ddd; }
+
+        /* === TURNING POINT === */
+        .turning-point {
+            background: linear-gradient(135deg, #1a2a15 0%, #1a1a1a 100%);
+            border: 1px solid #2d4a22;
+            border-radius: 10px;
+            padding: 24px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .turning-point .tp-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .turning-point h3 {
+            color: #86efac;
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+
+        .turning-point p {
+            font-size: 15px;
+            color: #aaa;
+            margin-bottom: 0;
+        }
+
+        /* === INGREDIENT CHIPS === */
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .chip {
+            background: #1a2a1a;
+            border: 1px solid #2d4a22;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 13px;
+            color: #86efac;
+            font-weight: 600;
+        }
+
+        /* === TIMELINE === */
+        .timeline {
+            margin: 26px 0;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #dc2626 0%, #fbbf24 40%, #86efac 100%);
+            border-radius: 1px;
+        }
+
+        .tl-item {
+            position: relative;
+            padding: 0 0 28px 20px;
+        }
+
+        .tl-item:last-child { padding-bottom: 0; }
+
+        .tl-item::before {
+            content: "";
+            position: absolute;
+            left: -21px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fbbf24;
+            border: 2px solid #111;
+        }
+
+        .tl-item:first-child::before { background: #dc2626; }
+        .tl-item:last-child::before { background: #86efac; }
+
+        .tl-item .tl-day {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #fbbf24;
+            margin-bottom: 4px;
+        }
+
+        .tl-item:first-child .tl-day { color: #dc2626; }
+        .tl-item:last-child .tl-day { color: #86efac; }
+
+        .tl-item p {
+            font-size: 15px;
+            color: #bbb;
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        .tl-item p strong { color: #fff; }
+
+        /* === COMPARISON === */
+        .vs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 13.5px;
+        }
+
+        .vs-table th {
+            padding: 12px 14px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .vs-table th:first-child { background: #1a1a1a; color: #888; }
+        .vs-table th:nth-child(2) { background: #1a1a1a; color: #888; }
+        .vs-table th:last-child { background: #1a2a1a; color: #86efac; }
+
+        .vs-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #222;
+            color: #999;
+        }
+
+        .vs-table td:last-child {
+            color: #86efac;
+            font-weight: 600;
+        }
+
+        /* === REVIEWS === */
+        .rev {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 14px 0;
+        }
+
+        .rev .stars { color: #fbbf24; font-size: 14px; margin-bottom: 8px; }
+
+        .rev p {
+            font-size: 14.5px;
+            color: #bbb;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .rev .who {
+            font-size: 12px;
+            color: #666;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .rev .vb {
+            background: #1a2a1a;
+            color: #86efac;
+            font-size: 10px;
+            padding: 2px 7px;
+            border-radius: 3px;
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        /* === STATS === */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 28px 0;
+        }
+
+        .stat-box {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 16px 10px;
+            text-align: center;
+        }
+
+        .stat-box .num {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+
+        .stat-box .lb {
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 2px;
+        }
+
+        /* === CTA === */
+        .cta-main {
+            background: linear-gradient(135deg, #1a2a15 0%, #243a1e 50%, #2d4a22 100%);
+            border: 1px solid #3d6a32;
+            border-radius: 14px;
+            padding: 34px 26px;
+            margin: 38px 0;
+            text-align: center;
+        }
+
+        .cta-main h3 {
+            color: #fff;
+            font-size: 21px;
+            margin: 0 0 6px;
+        }
+
+        .cta-main .sub {
+            font-size: 13px;
+            color: #86efac;
+            margin-bottom: 20px;
+        }
+
+        .cta-main .price-row {
+            margin-bottom: 20px;
+        }
+
+        .cta-main .old-p {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 17px;
+        }
+
+        .cta-main .new-p {
+            font-size: 36px;
+            font-weight: 900;
+            color: #fbbf24;
+            margin-left: 8px;
+        }
+
+        .cta-main .per {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .go-btn {
+            display: inline-block;
+            background: #fbbf24;
+            color: #111;
+            font-size: 16px;
+            font-weight: 800;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(251, 191, 36, 0.3);
+        }
+
+        .go-btn:hover {
+            background: #f59e0b;
+            transform: translateY(-1px);
+        }
+
+        .cta-main .btm {
+            font-size: 11px;
+            color: #666;
+            margin-top: 14px;
+        }
+
+        /* Mid CTA */
+        .mid-cta {
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .mid-cta a {
+            display: inline-block;
+            background: #fbbf24;
+            color: #111;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 13px 28px;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .mid-cta a:hover { background: #f59e0b; }
+
+        .mid-cta .micro {
+            font-size: 11px;
+            color: #555;
+            margin-top: 6px;
+        }
+
+        /* === PS === */
+        .ps {
+            background: #1a1a1a;
+            border-left: 3px solid #fbbf24;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 22px;
+            margin: 30px 0;
+        }
+
+        .ps p {
+            font-size: 14.5px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .ps p:last-child { margin-bottom: 0; }
+
+        .ps a { color: #fbbf24; font-weight: 600; }
+
+        /* === FOOTER === */
+        .foot {
+            background: #0a0a0a;
+            padding: 24px 18px;
+            font-size: 10.5px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .foot p {
+            max-width: 640px;
+            margin: 0 auto 8px;
+        }
+
+        .foot a { color: #555; }
+
+        /* === STICKY === */
+        .sticky {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #111;
+            border-top: 1px solid #2a2a2a;
+            padding: 10px 16px;
+            z-index: 1000;
+        }
+
+        .sticky a {
+            display: block;
+            background: #fbbf24;
+            color: #111;
+            font-size: 14px;
+            font-weight: 800;
+            padding: 12px;
+            border-radius: 7px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sticky .sm {
+            text-align: center;
+            font-size: 10px;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .sticky { display: block; }
+            .content { padding-bottom: 85px; }
+            .hero h1 { font-size: 23px; }
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Anim */
+        .fi { opacity: 0; transform: translateY(16px); transition: all 0.5s ease; }
+        .fi.vis { opacity: 1; transform: translateY(0); }
+
+        /* Separator */
+        .sep {
+            width: 40px;
+            height: 3px;
+            background: #fbbf24;
+            margin: 40px auto;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="alert-bar"><span>⚠️ If you drive daily and have lower back + leg pain — read this before it gets worse</span></div>
+<div class="adv-strip">Advertorial</div>
+
+<div class="w">
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="label">Real Story</div>
+        <h1>"I Drive 10 Hours a Day. <span class="hl">Sciatica</span> Almost Made Me Park My Car For Good."</h1>
+        <div class="meta">By <strong>Naveen R.</strong> · Bangalore · <strong>Last Updated:</strong> Feb 18, 2026</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <p>Let me tell you something about driving for a living.</p>
+
+        <p>People think it's easy. "Bus baithke steering ghoomana hai." Sit and turn the wheel. But after 10-12 hours in that seat — hitting every pothole on Outer Ring Road, braking in Silk Board traffic, your spine absorbing every vibration — <strong>your body pays a price nobody sees.</strong></p>
+
+        <p>I've been driving for Ola in Bangalore for 6 years. Before that, I drove a Tavera for a tour company in Mysore. I'm 40 years old and I've spent the better part of my adult life sitting in a driver's seat.</p>
+
+        <p>And 2 years ago, <strong>my body finally said enough.</strong></p>
+
+        <h2>It didn't start as sciatica. It started as "driver's back pain."</h2>
+
+        <p>Every driver I know has back pain. It comes with the job. You learn to live with it. A little stiffness in the morning, some ache after a long day — you stretch a bit, lie down, and it's manageable.</p>
+
+        <p>But what started happening to me was different.</p>
+
+        <p>The pain in my lower back started <strong>travelling.</strong> First into my left hip. Then down the back of my thigh. Then — and this was the part that scared me — <strong>a burning, electric feeling that went from my buttock all the way to my calf.</strong></p>
+
+        <p>Like someone was running a hot wire through my leg.</p>
+
+        <div class="raw-quote fi">
+            <p>"Bhai, pair sun ho jaata tha ride ke baad. Kabhi kabhi brake pe pair rakhta tha aur lagta tha pair hai hi nahi. Tab darr laga."</p>
+            <div class="src">— What I told my wife when the numbness started</div>
+        </div>
+
+        <p>After a ride, my left leg would go numb. Sometimes while driving — <strong>my foot on the brake would lose feeling.</strong> That's when the fear hit me. This wasn't just back pain anymore. This was dangerous.</p>
+
+        <p>I went to a government hospital. X-ray. Then MRI. The doctor said: <strong>"L4-L5 disc bulge. Sciatic nerve compression. You need physiotherapy and rest."</strong></p>
+
+        <p>Rest. As if a cab driver earning daily can take "rest."</p>
+
+        <h2>The math that keeps you driving through pain</h2>
+
+        <p>Here's what people with salaried jobs don't understand. <strong>If I don't drive, I don't earn. Period.</strong></p>
+
+        <div class="pain-counter fi">
+            <div class="title">What sciatica was costing me — every month</div>
+            <div class="pain-item">
+                <span class="what">Days I couldn't drive (pain too bad)</span>
+                <span class="cost">- ₹6,000</span>
+            </div>
+            <div class="pain-item">
+                <span class="what">Rides I cut short (leg went numb)</span>
+                <span class="cost">- ₹3,500</span>
+            </div>
+            <div class="pain-item">
+                <span class="what">Painkillers & balms</span>
+                <span class="cost">- ₹1,200</span>
+            </div>
+            <div class="pain-item">
+                <span class="what">Physiotherapy (twice a week)</span>
+                <span class="cost">- ₹4,800</span>
+            </div>
+            <div class="pain-item">
+                <span class="what">Lost long-ride bookings (couldn't sit 3+ hours)</span>
+                <span class="cost">- ₹5,000</span>
+            </div>
+            <div class="total-row">
+                <span class="what">Total monthly loss</span>
+                <span class="cost">~₹20,500</span>
+            </div>
+        </div>
+
+        <p>₹20,500 per month. That's not just money — <strong>that's my daughter's tuition, my wife's household budget, my EMI.</strong></p>
+
+        <p>So I kept driving. Through the pain. Through the numbness. Popping Aceclofenac tablets on an empty stomach. Rubbing Volini on my back in the car between rides.</p>
+
+        <p>Until even that stopped working.</p>
+
+        <h2>Everything I tried — and why none of it lasted</h2>
+
+        <ul class="fail-list fi">
+            <li><strong>Volini / Moov / Iodex</strong> — 10-15 minutes of cooling sensation. Pain came right back. Wasted money buying one tube after another. At one point I was going through 3 tubes a month.</li>
+            <li><strong>Painkillers (Aceclofenac, Diclofenac)</strong> — Worked for 4-5 hours, then the pain returned worse. After 2 months, developed severe acidity. Doctor said stop immediately or risk stomach ulcer.</li>
+            <li><strong>Ayurvedic oil from chemist</strong> — Horrible smell. Stained my car seat. Passengers complained. One lady gave me a 1-star rating saying "driver smells like medicine." Relief lasted 20 minutes. Useless.</li>
+            <li><strong>Physiotherapy</strong> — ₹600 per session, twice a week. I went for 6 weeks. Genuine improvement during the sessions, but I couldn't maintain consistency. If I missed even one week, the pain came crashing back.</li>
+            <li><strong>Belt / back support</strong> — Bought a lumbar support belt from Amazon. It helped the posture a bit but did nothing for the shooting leg pain. Sciatica is not a posture problem — it's a nerve problem.</li>
+        </ul>
+
+        <p>Total spent in 2 years: <strong>roughly ₹50,000-60,000.</strong></p>
+
+        <p>That's 3 months of my daughter's school fees. Gone. On things that gave me hours of relief at best.</p>
+
+        <h2>The day a passenger changed everything</h2>
+
+        <p>This is the part I still find hard to believe.</p>
+
+        <p>It was a Tuesday evening ride. Koramangala to Whitefield. Long ride, good fare. About 40 minutes in, my left leg started tingling badly. I was shifting in my seat, trying to find a position that didn't hurt. The passenger — an older man, maybe 55 — noticed.</p>
+
+        <p><em>"Back pain?"</em> he asked.</p>
+
+        <p><em>"Ji, sciatica hai."</em></p>
+
+        <p>He reached into his bag, pulled out a small tube, and said: <em>"Mere bete ne yeh order kiya tha mere liye. Knee pain ke liye use karta tha. But mera sciatica bhi bahut kam ho gaya hai. Try karo."</em></p>
+
+        <p>He showed me the tube. <strong>Zanskar Advanced Pain Healing Cream.</strong></p>
+
+        <p>I'd never heard of it. I thought it was just another cream. But this man — a complete stranger — had <strong>genuine relief on his face when he talked about it.</strong> Not like an ad. Like someone who'd actually been in pain and wasn't anymore.</p>
+
+        <p>He told me to look it up and order from their website. The ride ended. I dropped him off. And that night, I searched for it.</p>
+
+        <div class="turning-point fi">
+            <div class="tp-icon">🔍</div>
+            <h3>What I Found When I Looked It Up</h3>
+            <p>IIT Delhi formulation. AYUSH licensed. Natural ingredients — no diclofenac, no steroids. 6X deeper penetration technology. 20 lakh+ customers. 4.7 star rating from 1,074 reviews. And reviews from people with sciatica specifically. Pack of 2 for ₹699.</p>
+        </div>
+
+        <p>₹699 for two tubes. I was spending more than that on painkillers every month. Even if it gave me 50% of what that passenger described, <strong>it was worth trying.</strong></p>
+
+        <div class="mid-cta">
+            <a href="https://zanskarhealth.in/products/zanskar-pain-cream" target="_blank">Check Zanskar Availability →</a>
+            <div class="micro">⚡ 50K+ sold last month · Same day delivery in metros</div>
+        </div>
+
+        <h2>What's different about this cream — in simple terms</h2>
+
+        <p>I'm not a doctor. I can't explain it the way doctors do. But I'll tell you what I understood from reading their website and what made sense to me:</p>
+
+        <p><strong>Most creams work on the skin.</strong> They make it hot or cold. Your brain gets distracted. Pain goes away for 15-20 minutes. Then it comes back because nothing actually happened inside.</p>
+
+        <p><strong>Sciatica pain is deep inside.</strong> It's a nerve that's being squeezed by a bulging disc. The tissue around that nerve is swollen and inflamed. A cream that works on the skin surface can't reach that.</p>
+
+        <p><strong>Zanskar is built differently.</strong> Their formulation penetrates up to 6X deeper than normal creams. The ingredients — Arnica, Boswellia, MSM, Capsaicin, Vitamin B6 — actually target the inflammation around the nerve, repair the damaged tissue, and reduce the pain signals.</p>
+
+        <div class="chip-row fi">
+            <span class="chip">🌿 Arnica — Anti-inflammatory</span>
+            <span class="chip">🪵 Boswellia — Pain relief</span>
+            <span class="chip">💎 MSM — Tissue repair</span>
+            <span class="chip">🌶️ Capsaicin — Nerve pain</span>
+            <span class="chip">🧬 Vitamin B6 — Nerve support</span>
+            <span class="chip">🛡️ Vitamin E — Cell protection</span>
+        </div>
+
+        <p>That's why people say it doesn't just mask pain — <strong>it reduces pain more and more over days and weeks.</strong> Because it's actually addressing what's causing the pain, not just covering it up.</p>
+
+        <p>No smell. No grease. No staining. No prescription needed. Apply and drive.</p>
+
+        <h2>My 30 days with Zanskar — no exaggeration, no BS</h2>
+
+        <div class="timeline fi">
+            <div class="tl-item">
+                <div class="tl-day">Before Starting</div>
+                <p>Pain level 8/10. Driving possible but miserable. Left leg numb after 2 hours. Cutting rides short. Eating painkillers 4-5 times a week. <strong>Seriously considering quitting driving and looking for another job.</strong></p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-day">Day 3</div>
+                <p>Applied it morning, afternoon, and night. <strong>Warm feeling that goes deep — not surface level burning like Moov.</strong> Slept better on the first night itself. Not dramatic, but noticeable. The morning stiffness was slightly less.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-day">Day 7</div>
+                <p>This is when I started believing. <strong>Drove for 5 hours straight without the leg going numb.</strong> That hadn't happened in 8 months. Pain was still there — maybe 5/10 — but the shooting electric feeling down the leg was much weaker. Applied the cream in the car between rides. No smell. Passengers couldn't tell.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-day">Day 14</div>
+                <p>Accepted a Whitefield to Airport booking — 2.5 hours with traffic. Completed it without stopping. <strong>No numbness. No shooting pain.</strong> Dull ache in lower back, about 3/10. My wife noticed I wasn't walking funny when I came home. "Tum theek se chal rahe ho aaj," she said.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-day">Day 21</div>
+                <p>Haven't taken a single painkiller in 2 weeks. <strong>Started doing 3 basic stretches in the morning</strong> — something I couldn't do before because any stretching triggered a flare-up. The cream before stretching made it painless. Leg tingling almost gone.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-day">Day 30</div>
+                <p><strong>Back to full 10-12 hour driving days.</strong> Pain level 1-2/10 on most days. Zero numbness. No painkillers. Took an outstation trip to Mysore — 6 hours round — something I'd refused for 8 months. My daily earnings are back to where they were before sciatica. <strong>₹699 ke do tubes ne mera ₹20,000 monthly ka loss band kar diya.</strong></p>
+            </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <h2>Why drivers specifically need to know about this</h2>
+
+        <p>Let me be clear about something. <strong>Driving is one of the top 3 triggers for sciatica.</strong></p>
+
+        <p>Research shows that people who drive more than 4 hours a day have significantly higher rates of sciatic nerve compression. The combination of prolonged sitting, whole-body vibration from the road, and the inability to change posture frequently — it's a recipe for disc damage.</p>
+
+        <p>Whether you're an Ola/Uber driver, a truck driver, a sales rep covering territory, or someone stuck in 2 hours of daily Bangalore/Delhi commute — <strong>you're in the highest risk category for sciatica.</strong></p>
+
+        <p>And here's the cruel part: the very activity that causes the problem is also the one you can't stop doing. You need to drive. You need to earn. You need to commute.</p>
+
+        <p>That's exactly why I'm sharing this. <strong>Because we don't get the luxury of "6 months rest."</strong> We need something that works while we work.</p>
+
+        <!-- COMPARISON -->
+        <h2>What ₹699 got me vs what ₹50,000 didn't</h2>
+
+        <table class="vs-table fi">
+            <tr>
+                <th>Treatment</th>
+                <th>Cost (2 yrs)</th>
+                <th>Zanskar (₹699)</th>
+            </tr>
+            <tr>
+                <td>Painkillers</td>
+                <td>₹12,000 + stomach damage</td>
+                <td>No painkillers needed</td>
+            </tr>
+            <tr>
+                <td>Volini/Moov</td>
+                <td>₹8,000 - 15min relief</td>
+                <td>Hours of deep relief</td>
+            </tr>
+            <tr>
+                <td>Physiotherapy</td>
+                <td>₹28,800 - inconsistent</td>
+                <td>Apply anytime, anywhere</td>
+            </tr>
+            <tr>
+                <td>Ayurvedic oils</td>
+                <td>₹4,000 - stains + smell</td>
+                <td>No smell, no stains</td>
+            </tr>
+            <tr>
+                <td>Lost income</td>
+                <td>₹20,500/month</td>
+                <td>Full earning capacity back</td>
+            </tr>
+        </table>
+
+        <!-- REVIEWS -->
+        <h2>Others like me</h2>
+
+        <div class="rev fi">
+            <div class="stars">★★★★★</div>
+            <p>"Sciatica 60 percent recovered. 40 percent is there. Other pains also recovered."</p>
+            <span class="who">Jillellamudi V.K.</span>
+            <span class="vb">✓ Verified</span>
+        </div>
+
+        <div class="rev fi">
+            <div class="stars">★★★★★</div>
+            <p>"Been using Zanskar for my disc pain and have experienced remarkable benefits within 2 weeks."</p>
+            <span class="who">Verified Buyer</span>
+            <span class="vb">✓ Verified</span>
+        </div>
+
+        <div class="rev fi">
+            <div class="stars">★★★★★</div>
+            <p>"This smells good, feels great, and most importantly, it works. Definitely re-ordering."</p>
+            <span class="who">Verified Buyer</span>
+            <span class="vb">✓ Verified</span>
+        </div>
+
+        <div class="stat-row fi">
+            <div class="stat-box">
+                <div class="num">20L+</div>
+                <div class="lb">Customers</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">93%</div>
+                <div class="lb">Got Relief</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">4.7★</div>
+                <div class="lb">Rating</div>
+            </div>
+            <div class="stat-box">
+                <div class="num">50K+</div>
+                <div class="lb">Last Month</div>
+            </div>
+        </div>
+
+        <!-- MAIN CTA -->
+        <div class="cta-main fi">
+            <h3>Try Zanskar — ₹699 for Pack of 2</h3>
+            <div class="sub">Less than what you spend on painkillers in a month</div>
+            <div class="price-row">
+                <span class="old-p">₹998</span>
+                <span class="new-p">₹699</span>
+                <br>
+                <span class="per">Pack of 2 · 30% Off · Same/Next Day Delivery</span>
+            </div>
+            <a href="https://zanskarhealth.in/products/zanskar-pain-cream" class="go-btn" target="_blank">Get Zanskar Now →</a>
+            <div class="btm">AYUSH Licensed · IIT Delhi · No Steroids · Cash On Delivery Available</div>
+        </div>
+
+        <h2>Common questions drivers ask me</h2>
+
+        <h3>"Can I apply it and immediately start driving?"</h3>
+        <p>Yes. It absorbs in 2-3 minutes. No grease on your hands or clothes. No smell that passengers will notice. I apply it in my car before the first ride every morning.</p>
+
+        <h3>"Will it interfere with painkillers I'm taking?"</h3>
+        <p>It's 100% natural ingredients — no drug interactions. In fact, most people (including me) stop needing painkillers within 2-3 weeks. But don't stop any prescribed medication without asking your doctor.</p>
+
+        <h3>"How long does one tube last?"</h3>
+        <p>At 3-4 applications daily on lower back and leg, one 50g tube lasts about 3 weeks. Pack of 2 covers 6 weeks. Pack of 3 at ₹999 (code: 3@999) is the best deal — covers 9 weeks, comes with a free gift worth ₹249, and a free physiotherapy app.</p>
+
+        <h3>"My pain is very severe. Will a cream really help?"</h3>
+        <p>Mine was 8/10 severe. Leg going numb while driving severe. It won't fix a broken disc — nothing except surgery can do that. But it can reduce the inflammation and pain enough for you to function, drive, earn, and live normally while your body heals. That's what it did for me.</p>
+
+        <!-- FINAL CTA -->
+        <div class="cta-main fi">
+            <h3>Best Value: Pack of 3 — Full 9-Week Supply</h3>
+            <div class="sub">+ Free Gift (₹249) + Free Physiotherapy App (₹1,999)</div>
+            <div class="price-row">
+                <span class="old-p">₹1,497</span>
+                <span class="new-p">₹999</span>
+                <br>
+                <span class="per">33% Off · Use code: 3@999 at checkout</span>
+            </div>
+            <a href="https://zanskarhealth.in/products/zanskar-pain-cream" class="go-btn" target="_blank">Get Pack of 3 — Best Value →</a>
+            <div class="btm">Cash On Delivery · Free Shipping · Same Day Dispatch</div>
+        </div>
+
+        <!-- PS -->
+        <div class="ps fi">
+            <p><strong>P.S.</strong> — Agar aap driver ho — chahe Ola, Uber, truck, sales, ya daily office commute — aur lower back + leg pain hai, toh please isse ignore mat karo. Main 2 saal karta raha. ₹60,000 waste kiya. Pain worse hota gaya. Jab ₹699 ki cheez ne kaam kar diya toh bahut gussa bhi aaya ki pehle kyun nahi pata tha. Ab tum jaante ho. <a href="https://zanskarhealth.in/products/zanskar-pain-cream" target="_blank">Yahan se order karo →</a></p>
+            <p><strong>P.P.S.</strong> — They sold 50,000+ units last month. Stock out hota rehta hai. Agar link kaam kar raha hai, toh abhi le lo.</p>
+        </div>
+
+    </div><!-- end content -->
+</div><!-- end w -->
+
+<!-- STICKY -->
+<div class="sticky" id="stk">
+    <a href="https://zanskarhealth.in/products/zanskar-pain-cream" target="_blank">Get Zanskar — ₹699 (Pack of 2) →</a>
+    <div class="sm">30% Off · Same Day Delivery · COD Available</div>
+</div>
+
+<!-- FOOTER -->
+<div class="foot">
+    <p>THIS IS AN ADVERTORIAL AND NOT AN ACTUAL NEWS ARTICLE, BLOG, OR CONSUMER PROTECTION UPDATE.</p>
+    <p>MEDICAL & HEALTH DISCLAIMER: The information provided on this page is not intended as medical advice. Consult your healthcare provider for diagnosis and treatment. Individual results may vary. Do not use on open wounds or damaged skin.</p>
+    <p>MARKETING DISCLOSURE: This website is a marketplace. The owner receives payment whenever a qualified lead is referred. Photographs and names are representative.</p>
+    <p>© 2026 · <a href="https://zanskarhealth.in" target="_blank">Zanskar Health</a></p>
+</div>
+
+<script>
+    const fis = document.querySelectorAll('.fi');
+    const o = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+    }, { threshold: 0.1 });
+    fis.forEach(el => o.observe(el));
+
+    let s = false;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 1800 && !s) {
+            document.getElementById('stk').style.display = 'block';
+            s = true;
+        }
+    });
+</script>
+
+</body>
+</html>
